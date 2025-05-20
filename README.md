@@ -29,8 +29,10 @@ Durante o treinamento, a implementação **armazena as métricas em cada época*
 - Recall  
 - F1-Score
 
-Essas métricas são armazenadas para possibilitar **análises gráficas e comparativas do desempenho do modelo** ao longo do tempo.
+Essas métricas são armazenadas para possibilitar **análises gráficas e comparativas do desempenho do modelo** ao longo das épocas.
 
 ---
 
-Sinta-se à vontade para explorar o código e adaptá-lo para outras bases de dados ou aplicações de aprendizado supervisionado com modelos lineares.
+## Funcionamento do perceptron
+
+![Rede Perceptron](./img/perceptron.png)
