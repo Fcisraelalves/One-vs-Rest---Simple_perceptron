@@ -33,6 +33,49 @@ Essas métricas são armazenadas para possibilitar **análises gráficas e compa
 
 ---
 
-## Funcionamento do perceptron
+## Funcionamento do Perceptron
 
 ![Rede Perceptron](./img/perceptron.png)
+
+Para entender o perceptron, é importante compreender primeiro o conceito de **neurônio artificial**. Nosso cérebro é composto por bilhões de neurônios conectados, e o neurônio artificial é uma **abstração matemática** desses neurônios biológicos. Quando interligados, esses neurônios artificiais formam uma **rede neural**.
+
+### Estrutura do Perceptron
+
+O perceptron funciona da seguinte forma:
+1. **Recebe entradas** (valores numéricos dos dados).
+2. Cada entrada é **multiplicada por um peso**, que representa a **importância** dessa informação.
+3. Soma-se a esse resultado um valor chamado **bias**, que adiciona uma variação ao modelo.
+4. O resultado passa por uma **função de ativação**, que decide a saída final do modelo.
+
+> **Função de ativação usada**: função degrau  
+> Se o valor for maior que 0, a saída é 1; caso contrário, é 0.
+
+### Parâmetros importantes
+
+- **Pesos**: valores que indicam a importância das entradas.  
+- **Bias**: constante adicionada para ajudar na separação dos dados.  
+- **Taxa de aprendizado**: define o **ritmo de ajuste dos pesos**.  
+  - Valores altos aprendem rápido, mas podem causar **overfitting**.
+  - Valores baixos aprendem devagar, mas podem causar **underfitting**.
+
+### Processo de Aprendizado
+
+Durante o treinamento:
+
+- Os pesos são **inicializados com valores pequenos aleatórios**.
+- O bias geralmente começa como zero.
+- Para cada entrada:
+  1. Calcula-se o resultado: `soma(peso * entrada) + bias`
+  2. Aplica-se a função de ativação.
+  3. Compara-se a saída com o valor esperado.
+  4. Calcula-se o **erro**: `erro = valor_esperado - valor_previsto`
+  5. **Atualiza-se os pesos**:  
+     `novo_peso = peso_antigo + taxa_aprendizado * erro * entrada`
+  6. **Atualiza-se o bias**:  
+     `novo_bias = bias_antigo + taxa_aprendizado * erro`
+
+Esse ciclo se repete por um número determinado de **épocas** (iterações sobre o conjunto de dados).
+
+---
+
+O perceptron, ao fim do treinamento, utiliza os pesos e o bias aprendidos para realizar previsões em novos dados.
